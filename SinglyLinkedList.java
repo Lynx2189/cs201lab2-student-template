@@ -121,15 +121,15 @@ public class SinglyLinkedList<E extends Comparable<E>> {
         }
 
         head = partner.get(original.get(0));
-        Node<E> previous = head;
+        Node<E> prev = head;
 
         for (int i = 1; i < original.size(); i++) {
             Node<E> next = partner.get(original.get(i));
-            previous.setNext(next);
-            previous = next;
+            prev.setNext(next);
+            prev = next;
         }
 
-        tail = previous;
+        tail = prev;
         tail.setNext(null);
     }
 }
